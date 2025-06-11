@@ -33,3 +33,10 @@ bin/
 **/hw*/**/.idea/
 hw*.iml
 **/hw*/**/.gitignore
+
+**/task*/**/.gigaide/
+**/task*/**/.idea/
+task*.iml
+**/task*/**/.gitignore
+
+
