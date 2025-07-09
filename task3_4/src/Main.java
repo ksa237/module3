@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        List<String> listD = new ArrayList<>();
+        List<String> listOfDeals = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
 
         boolean open = true;
@@ -24,13 +24,13 @@ public class Main {
                 case 1:
                     System.out.print("Введите название задачи:");
                     String answer = scanner.nextLine();
-                    listD.add(answer);
+                    listOfDeals.add(answer);
                     System.out.println("Добавлено!");
                     System.out.println();
-                    printListDeals(listD);
+                    printListDeals(listOfDeals);
                     break;
                 case 2:
-                    printListDeals(listD);
+                    printListDeals(listOfDeals);
                     break;
                 case 3:
                     System.out.print("Введите номер задачи для удаления:");
@@ -38,27 +38,27 @@ public class Main {
                     int answerId;
                     answerId = answerInt - 1;
                     scanner.nextLine();
-                    if (answerId < 0 || answerId >= listD.size()) {
+                    if (answerId < 0 || answerId >= listOfDeals.size()) {
                         System.out.println("Нет дела с номером " + answerInt);
                     } else {
-                        listD.remove(answerId);
+                        listOfDeals.remove(answerId);
                         System.out.println("Удалено!");
                         System.out.println();
                     }
-                    printListDeals(listD);
+                    printListDeals(listOfDeals);
                     break;
                 case 4:
                     System.out.print("Введите точное наименование задачи для удаления:");
                     String answerString = scanner.nextLine();
-                    int findInd = listD.indexOf(answerString);
+                    int findInd = listOfDeals.indexOf(answerString);
                     if (findInd == -1) {
                         System.out.println("Нет дела с наименованием " + answerString);
                     } else {
-                        listD.remove(answerString);
+                        listOfDeals.remove(answerString);
                         System.out.println("Удалено!");
                         System.out.println();
                     }
-                    printListDeals(listD);
+                    printListDeals(listOfDeals);
                     break;
                 default:
                     System.out.println("Неверный номер меню приложения.");
@@ -88,13 +88,13 @@ public class Main {
 
     }
 
-    static void printListDeals(List<String> l) {
+    static void printListDeals(List<String> listOfDeals) {
 
         System.out.println("Ваш список дел:");
         int i = 0;
-        for (String d : l) {
+        for (String deal : listOfDeals) {
             i++;
-            System.out.println("" + i + ". " + d);
+            System.out.println("" + i + ". " + deal);
         }
         System.out.println();
     }
